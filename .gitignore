@@ -5,7 +5,6 @@
 *.Rproj
 .DS_Store
 *.pdf
-*.png
 *.xlsx
 *.rda
 *.rds
@@ -14,8 +13,8 @@
 *.dll
 *.log
 *.txt
-*.zip
 .Rprofile
 README.Rmd
+README.html
 drawEmb.Rmd
 readStarryNiteZip.Rmd
