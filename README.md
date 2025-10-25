@@ -10,7 +10,6 @@ Workspace that generate figures for the [LIVEtools](https://github.com/johnmurra
 ## Contents: 
 ```
 LIVEtools-paper/
-├── .git/                            # git related files
 ├── .gitignore                       # git related files
 ├── 20241108_JIM767_25_L5-edit.zip   # sample data: direct output of AceTree embryo cell tracking pipeline
 ├── CDReferenceModel.csv             # sample data: a tabularized embryo cell tracking data - wildtype reference
