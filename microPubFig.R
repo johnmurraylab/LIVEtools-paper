@@ -1,7 +1,18 @@
 ## Load and Configure Modules -----
 library(reticulate)
-#assumes that one lready have a python venv at this directory
-reticulate::use_virtualenv("~/MurrayLab/LIVEtools_venv/")
+# Use LIVETOOLS_VENV env var if set, otherwise look for venv in parent directory
+venv_path <- Sys.getenv(
+  "LIVETOOLS_VENV", 
+  unset = file.path(dirname(getwd()), "LIVEtools_venv")
+)
+if (!dir.exists(venv_path)) {
+  stop(paste0(
+    "Python virtualenv not found at: ", venv_path, "\n",
+    "Please create one",
+    "Or set LIVETOOLS_VENV to point to your existing environment: "
+  ))
+}
+reticulate::use_virtualenv(venv_path, required = TRUE)
 reticulate::py_run_string("import sys")
 library(LIVEtools)
 
@@ -37,7 +48,8 @@ saveEmbImg(
 
 ### Plot the position of reference lineage to demonstrate how embryo rotation is accomplished -----
 figRotated_ref <- drawEmbLine(
-  lineages = c("Cxp", "Cxaa", "MSap", "MSpp"),
+  lineages = c("Cxp", "Cxaa", "MSap", "MSpp"), 
+  alphas = c(0.6, 0.6, 0.6, 0.6),
   rotatedEmbryo, 139, xSize = 1, ySize = 1, zSize = 1, cellSize = 4,
   aligned = T)
 MSap <- grepCells(rotatedEmbryo, lineages = "MSap", times = 139)[,c("x","y","z")]

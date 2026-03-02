@@ -13,6 +13,8 @@
 *.dll
 *.log
 *.txt
+renv/
+renv.lock
 .Rprofile
 README.Rmd
 README.html

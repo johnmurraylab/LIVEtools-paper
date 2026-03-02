@@ -1,14 +1,42 @@
 # LIVEtools-paper
-Workspace that generate figures for the [LIVEtools](https://github.com/johnmurraylab/LIVE_tools) paper. 
 
-## How to
-1. Install LIVEtools as instructed in [Installation](https://github.com/johnmurraylab/LIVE_tools?tab=readme-ov-file#installation)
-2. Make sure you are in the directory of `LIVEtools-paper`
-3. Run `Rscript microPubFig.R`
-4. Check the file output in `LIVEtools-paper/microPubImg`
+Workspace that generate figures for the [LIVE_tools](https://github.com/johnmurraylab/LIVE_tools) paper.
 
-## Contents: 
-```
+## Reproduce the figures
+
+1.  Install LIVEtools as instructed in [LIVE_tools repository](https://github.com/johnmurraylab/LIVE_tools?tab=readme-ov-file#before-you-begin)
+
+2.  Download this repository.
+
+3.  Make sure that your working directory is the downloaded repository of `LIVEtools-paper`
+
+4.  This project utilizes the image saving functionalities, so make sure that you have [Setup Python for Image Export](https://github.com/johnmurraylab/LIVE_tools?tab=readme-ov-file#step-3-optional-setup-python-for-image-export).
+
+    The script expect a qualifying venv named `LIVEtools_venv` in the parent directory of `LIVEtools-paper`.
+
+    Alternatively, you can set the `LIVETOOLS_VENV` environment variable to point to an existing environment:
+
+    ``` sh
+    #in linux shell
+    LIVETOOLS_VENV = "path/to/venv"
+    ```
+
+    ``` powershell
+    #in windows
+    $env:LIVETOOLS_VENV = "path/to/venv"
+    ```
+
+5.  Run `microPubFig.R`, for example, in shell command:
+
+    ``` sh
+    Rscript microPubFig.R
+    ```
+
+6.  Check the file output in `LIVEtools-paper/microPubImg`
+
+## Contents:
+
+```         
 LIVEtools-paper/
 ├── .gitignore                       # git related files
 ├── 20241108_JIM767_25_L5-edit.zip   # sample data: direct output of AceTree embryo cell tracking pipeline
